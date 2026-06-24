@@ -23,9 +23,7 @@ ALLOWED_MODELS = [
     "gemini-2.5-flash"
 ]
 
-@app.get("/")
-def show():
-    print("successfully connected to the backend!")
+
 
 @app.post("/chat")
 def chat(request: RequestState):

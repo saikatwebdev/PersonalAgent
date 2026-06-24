@@ -74,15 +74,6 @@ IMPORTANT RULES:
 8. Never expose raw tool outputs directly to users.
 """
 
-# EXTRA TOOLS
-
-@tool
-def mult(a:int, b:int)->int:
-    """
-    Use this function when user tell to multiply two integers.
-    """
-    return "answer : " , a*b
-
 # STATE
 
 class State(TypedDict):
@@ -108,7 +99,7 @@ def build_graph(model_name, provider, allow_search):
         raise ValueError("Invalid Provider")
 
     # Tools
-    tools = [mult]
+    tools = []
 
     if allow_search:
         tools.append(
