@@ -25,6 +25,9 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 
 from langchain_core.messages import SystemMessage
 
+
+from langchain.tools import tool
+
 SYSTEM_PROMPT = """
 You are a professional AI assistant.
 
@@ -71,6 +74,15 @@ IMPORTANT RULES:
 8. Never expose raw tool outputs directly to users.
 """
 
+# EXTRA TOOLS
+
+@tool
+def mult(a:int, b:int)->int:
+    """
+    Use this function when user tell to multiply two integers.
+    """
+    return "answer : " , a*b
+
 # STATE
 
 class State(TypedDict):
@@ -96,7 +108,7 @@ def build_graph(model_name, provider, allow_search):
         raise ValueError("Invalid Provider")
 
     # Tools
-    tools = []
+    tools = [mult]
 
     if allow_search:
         tools.append(
