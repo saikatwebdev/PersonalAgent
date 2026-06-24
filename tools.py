@@ -52,3 +52,9 @@ def youtube_transcript(video_url: str) -> str:
 
     except Exception as e:
         return f"Transcript error: {str(e)}"
+    
+
+
+def multiply(a:int, b:int)->int:
+    """use this tool when you have to calculate something"""
+    return a*b

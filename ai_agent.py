@@ -27,7 +27,7 @@ from langchain_core.messages import SystemMessage
 
 
 from langchain.tools import tool
-from tools import youtube_transcript
+from tools import youtube_transcript, multiply
 
 SYSTEM_PROMPT = """
 You are a professional AI assistant.
@@ -102,7 +102,8 @@ def build_graph(model_name, provider, allow_search):
 
     # Tools
     tools = [
-        youtube_transcript
+        youtube_transcript,
+        multiply
     ]
 
     if allow_search:
