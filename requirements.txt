@@ -12,3 +12,4 @@ uvicorn
 streamlit
 typing-extensions
 langchain-google-genai
+youtube-transcript-api

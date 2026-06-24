@@ -27,6 +27,7 @@ from langchain_core.messages import SystemMessage
 
 
 from langchain.tools import tool
+from tools import youtube_transcript
 
 SYSTEM_PROMPT = """
 You are a professional AI assistant.
@@ -84,6 +85,7 @@ class State(TypedDict):
 
 memory = MemorySaver()
 
+
 # GRAPH BUILDER
 
 def build_graph(model_name, provider, allow_search):
@@ -99,7 +101,9 @@ def build_graph(model_name, provider, allow_search):
         raise ValueError("Invalid Provider")
 
     # Tools
-    tools = []
+    tools = [
+        youtube_transcript
+    ]
 
     if allow_search:
         tools.append(
@@ -206,7 +210,7 @@ def get_response_from_ai_agent(
         }
     }
 
-    response = graph.invoke(
+    response = graph.stream(
         {
             "messages": [
                 {
