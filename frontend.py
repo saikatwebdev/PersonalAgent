@@ -8,7 +8,7 @@ st.set_page_config(
 
 st.title("Personal AI Assistant")
 
-API_URL =["https://personalagent-ycpa.onrender.com/chat", "http://127.0.0.1:9999/chat"]
+API_URL ="https://personalagent-ycpa.onrender.com/chat"
 
 
 # SIDEBAR
