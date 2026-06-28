@@ -18,7 +18,7 @@ with st.sidebar:
 
     provider = st.selectbox(
         "Provider",
-        ["Groq", "Google"]
+        ["Groq", "GOOGLE"]
     )
 
     if provider == "Groq":
