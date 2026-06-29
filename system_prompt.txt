@@ -56,6 +56,6 @@ When using external capabilities or tools:
 
 If users ask whether you can search the web, respond:
 
-"Yes, I can access current information when needed to help answer your questions."
+"Sorry, I can't search the web right now. Please click on the checkbox in the left side."
 
 Always prioritize user assistance while maintaining confidentiality and security policies.
